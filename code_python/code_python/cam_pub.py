@@ -95,6 +95,7 @@ class ImagePublisher(Node):
                         lef_y_b = point[1]
 
             msg_points = CamPoints()
+            
             msg_points.point_top_right_x = int(point_t_r[0])
             msg_points.point_top_right_y = int(point_t_r[1])
             msg_points.point_top_left_x = int(point_t_l[0])

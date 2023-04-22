@@ -13,7 +13,7 @@ class ImageSubscriber(Node):
     def __init__(self):
         super().__init__('cam_sub')
         self.sub_cam_ = self.create_subscription(
-            Image, 'video_frames', self.listener_callback_cam, 2)
+            Image, 'video_frames', self.listener_callback_cam, 1)
         self.sub_qr_ = self.create_subscription(
             String, 'data_frame', self.listener_callback_data, 20)
         self.sub_points_ = self.create_subscription(
@@ -21,7 +21,7 @@ class ImageSubscriber(Node):
         self.sub_cam_
         self.sub_qr_
         self.sub_points_
-        self.frame = np.zeros((160, 120, 3), np.uint8)
+        self.frame = Image()
         self.bridge = CvBridge()
         self.get_qr = 0
         self.get_logger().info('Cam Sub Started')
