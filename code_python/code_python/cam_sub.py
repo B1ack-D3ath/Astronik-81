@@ -21,7 +21,7 @@ class ImageSubscriber(Node):
         self.sub_cam_
         self.sub_qr_
         self.sub_points_
-        self.frame = Image()
+        self.frame = np.zeros((160, 120, 3), np.uint8)
         self.bridge = CvBridge()
         self.get_qr = 0
         self.get_logger().info('Cam Sub Started')
@@ -42,13 +42,16 @@ class ImageSubscriber(Node):
         point_l_b = msg.point_left_back_x, msg.point_left_back_y
 
         if point_t_r[0] != 0 or point_t_r[1] != 0 or point_t_l[0] != 0 or point_t_l[1] != 0:
-            self.frame = cv2.line(self.frame, point_t_r, point_t_l, (0, 0, 255), 2)
+            self.frame = cv2.line(self.frame, point_t_r,
+                                  point_t_l, (0, 0, 255), 2)
 
         if point_r_t[0] != 0 or point_r_t[1] != 0 or point_r_b[0] != 0 or point_r_b[1] != 0:
-            self.frame = cv2.line(self.frame, point_r_t, point_r_b, (0, 0, 255), 2)
+            self.frame = cv2.line(self.frame, point_r_t,
+                                  point_r_b, (0, 0, 255), 2)
 
         if point_l_t[0] != 0 or point_l_t[1] != 0 or point_l_b[0] != 0 or point_l_b[1] != 0:
-            self.frame = cv2.line(self.frame, point_l_t, point_l_b, (0, 0, 255), 2)
+            self.frame = cv2.line(self.frame, point_l_t,
+                                  point_l_b, (0, 0, 255), 2)
 
         cv2.imshow("camera", self.frame)
         cv2.waitKey(1)

@@ -14,8 +14,8 @@ class ImagePublisher(Node):
     def __init__(self):
         super().__init__('cam_pub')
         self.cap = cv2.VideoCapture(0)
-        self.cap.set(3, 640)
-        self.cap.set(4, 480)
+        self.cap.set(3, 160)
+        self.cap.set(4, 120)
         self.pub_qr_ = self.create_publisher(
             String, 'data_frame', 20)
         self.pub_image_ = self.create_publisher(
@@ -58,11 +58,11 @@ class ImagePublisher(Node):
             point_l_t = [0, 0]
             point_l_b = [0, 0]
 
-            top_x_l = 640
+            top_x_l = 160
             top_x_r = 0
-            rig_y_t = 480
+            rig_y_t = 120
             rig_y_b = 0
-            lef_y_t = 640
+            lef_y_t = 120
             lef_y_b = 0
 
             for cnt in contours:
@@ -77,7 +77,7 @@ class ImagePublisher(Node):
                             point_t_l = point
                             top_x_l = point[0]
 
-                    if point[0] > 635:
+                    if point[0] > 155:
                         if rig_y_t > point[1]:
                             point_r_t = point
                             rig_y_t = point[1]
