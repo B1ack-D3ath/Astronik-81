@@ -21,13 +21,17 @@ class ImageSubscriber(Node):
         self.sub_cam_
         self.sub_qr_
         self.sub_points_
-        self.frame = np.zeros((160, 120, 3), np.uint8)
+        self.frame = np.zeros((320, 240, 3), np.uint8)
         self.bridge = CvBridge()
         self.get_qr = 0
         self.get_logger().info('Cam Sub Started')
 
     def listener_callback_cam(self, data):
         self.frame = self.bridge.imgmsg_to_cv2(data)
+        imgray = cv2.cvtColor(self.frame, cv2.COLOR_BGR2GRAY)
+        ret, thresh = cv2.threshold(imgray, 20, 255, cv2.THRESH_BINARY_INV)
+        cv2.imshow("thresh", thresh)
+        cv2.waitKey(1)
 
     def listener_callback_data(self, msg):
         self.get_qr += 1
@@ -53,7 +57,8 @@ class ImageSubscriber(Node):
             self.frame = cv2.line(self.frame, point_l_t,
                                   point_l_b, (0, 0, 255), 2)
 
-        cv2.imshow("camera", self.frame)
+        img = cv2.resize(self.frame, (640, 480))
+        cv2.imshow("camera", img)
         cv2.waitKey(1)
 
 

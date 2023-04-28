@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'cam_pub = code_python.cam_pub:main',
-            'cam_sub = code_python.cam_sub:main'
+            'cam_sub = code_python.cam_sub:main',
+            'kontrol = code_python.kontrol:main'
         ],
     },
 )

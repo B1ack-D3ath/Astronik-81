@@ -14,8 +14,8 @@ class ImagePublisher(Node):
     def __init__(self):
         super().__init__('cam_pub')
         self.cap = cv2.VideoCapture(0)
-        self.cap.set(3, 160)
-        self.cap.set(4, 120)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 160)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 120)
         self.pub_qr_ = self.create_publisher(
             String, 'data_frame', 20)
         self.pub_image_ = self.create_publisher(
@@ -46,7 +46,7 @@ class ImagePublisher(Node):
                 self.get_logger().info('I Publish ' + str(self.read_qr) + '. Qr: ' + msg_qr.data)
 
             imgray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            ret, thresh = cv2.threshold(imgray, 87, 255, cv2.THRESH_BINARY_INV)
+            ret, thresh = cv2.threshold(imgray, 20, 255, cv2.THRESH_BINARY_INV)
 
             contours, hierarchy = cv2.findContours(
                 thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

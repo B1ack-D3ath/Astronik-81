@@ -15,6 +15,10 @@
   <depend>opencv2</depend>
   <depend>numpy</depend>
   <depend>pyzbar</depend>
+  <depend>astronik_interfaces</depend>
+  <depend>example_interfaces</depend>
+  <depend>time</depend>
+  <depend>serial</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
