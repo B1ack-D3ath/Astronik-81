@@ -1,15 +1,83 @@
-<h1>Astronik 81 Yazılım</h1>
-<p>Bu proje, <strong>TEKNOFEST Sanayide Dijital Teknolojiler Yarışması</strong> için geliştirilen <em>Otonom Güdümlü Araç</em> yazılımlarını içerir. Yazılım, aracın otonom kontrolü, güdümü, navigasyonu ve veri görselleştirme işlemlerini gerçekleştirmek üzere tasarlanmıştır.</p>
-<h2>Özellikler</h2>
-<ul><li><strong>Otonom Kontrol</strong>: Araç, çevresel verileri işleyerek bağımsız hareket edebilir.</li><li><strong>Engelden Kaçınma Algoritması</strong>: LiDAR ve ultrasonik sensörlerden gelen verilerle engellerden kaçma.</li><li><strong>Şerit Takip ve QR Kod İşleme</strong>: Kamera görüntülerinden şeritleri takip ederek parkur navigasyonu sağlar.</li><li><strong>Veri Görselleştirme</strong>: UDP/IP protokolü ile kontrol arayüzüne veri aktarımı.</li><li><strong>Algoritmalar</strong>:<ul><li>Engel Tespiti ve Kaçınma</li><li>Hareketlilik</li><li>Navigasyon</li></ul></li><li><strong>Veri Tabanı</strong>: Microsoft SQL Server kullanılarak veri kaydı ve işleme.</li></ul>
-<h2>Teknolojiler ve Diller</h2>
-<ul><li><strong>Raspberry Pi 4</strong>: Veri işleme ve sensör entegrasyonu için.</li><li><strong>Deneyap Kart</strong>: Sensörlerden veri alımı ve motor kontrolü.</li><li><strong>LiDAR ve Ultrasonik Sensörler</strong>: Çevresel tarama ve engel algılama.</li><li><strong>Görüntü İşleme</strong>: OpenCV ile çizgi ve QR kod takibi.</li><li><strong>Veritabanı</strong>: Microsoft SQL Server.</li><li><strong>Programlama Dilleri</strong>:<ul><li>C++: Raspberry Pi yazılımı.</li><li>C: Deneyap Kartı için sensör ve motor kontrolü.</li><li>C# (.Net Core): Veri görselleştirme ve kontrol arayüzü.</li></ul></li></ul>
-<h2>Gereksinimler</h2>
-<ul><li><strong>Yazılım Ortamı</strong>:<ul><li>Python 3.x (Raspberry Pi için)</li><li>Visual Studio (C# geliştirme için)</li><li>GCC veya ARM Toolchain (Deneyap Kart programlama için)</li></ul></li><li><strong>Kütüphaneler</strong>:<ul><li>OpenCV</li><li>SimpleCV</li><li>CanBus (Raspberry Pi ve Deneyap Kart arasında iletişim)</li></ul></li><li><strong>Donanımlar</strong>:<ul><li>Raspberry Pi 4</li><li>Deneyap Kart</li><li>LiDAR, Ultrasonik Sensörler, Kamera</li><li>Hub Motorlar ve Sürücüleri</li></ul></li></ul>
-<h2>Kurulum</h2>
-<ol><li><p><strong>Depoyu Klonlayın</strong>:</p><pre class="!overflow-visible"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none py-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Kodu kopyala</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/B1ack-D3ath/Astronik-81.git
-<span class="hljs-built_in">cd</span> Astronik-81
-</code></div></div></pre></li><li><p><strong>Yazılım Kurulumları</strong>:</p><ul><li><strong>Raspberry Pi</strong>:<ul><li>Python kütüphanelerini yükleyin:<pre class="!overflow-visible"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none py-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Kodu kopyala</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-bash">pip install opencv-python simplecv
-</code></div></div></pre></li></ul></li><li><strong>Deneyap Kart</strong>:<ul><li>Geliştirme ortamını kurun (ARM GCC Toolchain).</li><li>Kart üzerindeki kodu derleyip yükleyin.</li></ul></li><li><strong>Kontrol Arayüzü</strong>:<ul><li>Visual Studio kullanarak <code>ControlPanel.sln</code> dosyasını açın.</li><li>Derleme işlemini tamamlayın.</li></ul></li></ul></li></ol>
-<h2>Kullanım</h2>
-<ol><li>Raspberry Pi'ı çalıştırın ve sensörlerin düzgün şekilde bağlandığından emin olun.</li><li>Deneyap Kart ve diğer bileşenlerin enerjisini sağlayın.</li><li>Kontrol arayüzünü başlatın ve araç ile aynı ağa bağlanın.</li><li>Aracı "Manuel Kontrol" modunda test edin.</li><li>"Otonom Mod" seçeneğini kullanarak aracı bağımsız çalıştırın.</li></ol>
+# Astronik 81 Yazılım
+
+Bu proje, **TEKNOFEST Sanayide Dijital Teknolojiler Yarışması** için geliştirilen *Otonom Güdümlü Araç* yazılımlarını içerir. Yazılım, aracın otonom kontrolü, güdümü, navigasyonu ve veri görselleştirme işlemlerini gerçekleştirmek üzere tasarlanmıştır.
+
+## Özellikler
+
+- **Otonom Kontrol**: Araç, çevresel verileri işleyerek bağımsız hareket edebilir.
+- **Engelden Kaçınma Algoritması**: LiDAR ve ultrasonik sensörlerden gelen verilerle engellerden kaçma.
+- **Şerit Takip ve QR Kod İşleme**: Kamera görüntülerinden şeritleri takip ederek parkur navigasyonu sağlar.
+- **Veri Görselleştirme**: UDP/IP protokolü ile kontrol arayüzüne veri aktarımı.
+- **Algoritmalar**:
+  - Engel Tespiti ve Kaçınma
+  - Hareketlilik
+  - Navigasyon
+- **Veri Tabanı**: Microsoft SQL Server kullanılarak veri kaydı ve işleme.
+
+## Teknolojiler ve Diller
+
+- **Raspberry Pi 4**: Veri işleme ve sensör entegrasyonu için.
+- **Deneyap Kart**: Sensörlerden veri alımı ve motor kontrolü.
+- **LiDAR ve Ultrasonik Sensörler**: Çevresel tarama ve engel algılama.
+- **Görüntü İşleme**: OpenCV ile çizgi ve QR kod takibi.
+- **Veritabanı**: Microsoft SQL Server.
+- **Programlama Dilleri**:
+  - C++: Raspberry Pi yazılımı.
+  - C: Deneyap Kartı için sensör ve motor kontrolü.
+  - C# (.Net Core): Veri görselleştirme ve kontrol arayüzü.
+
+## Gereksinimler
+
+- **Yazılım Ortamı**:
+  - Python 3.x (Raspberry Pi için)
+  - Visual Studio (C# geliştirme için)
+  - GCC veya ARM Toolchain (Deneyap Kart programlama için)
+- **Kütüphaneler**:
+  - OpenCV
+  - SimpleCV
+  - CanBus (Raspberry Pi ve Deneyap Kart arasında iletişim)
+- **Donanımlar**:
+  - Raspberry Pi 4
+  - Deneyap Kart
+  - LiDAR, Ultrasonik Sensörler, Kamera
+  - Hub Motorlar ve Sürücüleri
+
+## Kurulum
+
+1. **Depoyu Klonlayın**:
+    ```bash
+    git clone https://github.com/B1ack-D3ath/Astronik-81.git
+    cd Astronik-81
+    ```
+
+2. **Yazılım Kurulumları**:
+    - **Raspberry Pi**:
+        - Python kütüphanelerini yükleyin:
+          ```bash
+          pip install opencv-python simplecv
+          ```
+    - **Deneyap Kart**:
+        - Geliştirme ortamını kurun (ARM GCC Toolchain).
+        - Kart üzerindeki kodu derleyip yükleyin.
+    - **Kontrol Arayüzü**:
+        - Visual Studio kullanarak `ControlPanel.sln` dosyasını açın.
+        - Derleme işlemini tamamlayın.
+
+## Kullanım
+
+1. Raspberry Pi'ı çalıştırın ve sensörlerin düzgün şekilde bağlandığından emin olun.
+2. Deneyap Kart ve diğer bileşenlerin enerjisini sağlayın.
+3. Kontrol arayüzünü başlatın ve araç ile aynı ağa bağlanın.
+4. Aracı "Manuel Kontrol" modunda test edin.
+5. "Otonom Mod" seçeneğini kullanarak aracı bağımsız çalıştırın.
+
+## Ek Görseller
+
+README dosyasında şu görsellerin bulunmasını öneriyorum:
+- **Engelden Kaçınma Algoritması Akış Şeması**
+- **Hareketlilik ve Navigasyon Algoritması Şeması**
+- **Kontrol Paneli Görselleştirme Arayüzü**
+
+Lütfen bu görselleri sağlarsanız, README’ye uygun şekilde ekleyebilirim.
+
+---
