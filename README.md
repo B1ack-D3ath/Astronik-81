@@ -91,15 +91,15 @@ Bu proje, **TEKNOFEST Sanayide Dijital Teknolojiler Yarışması** için gelişt
 ## Ek Görseller
 
 - **ROS2 Düğüm Yapısı ve Bağlantı Şeması**
-- **Engelden Kaçınma Algoritması Akış Şeması**
+- - **Engelden Kaçınma Algoritması Akış Şeması**
 <div style="display: flex; justify-content: space-around;">
     <img src="./images/Engelden_Kacma.png" width="200" alt="Engelden Kaçış Algoritma Şeması">
 </div>
-- **Hareketlilik Algoritması Şeması**
+- - **Hareketlilik Algoritması Şeması**
 <div style="display: flex; justify-content: space-around;">
     <img src="./images/Hareketlilik.png" width="200" alt="Hareketlilik Algoritma Şeması">
 </div>
-- **Navigasyon Algoritması Şeması**
+- - **Navigasyon Algoritması Şeması**
 <div style="display: flex; justify-content: space-around;">
     <img src="./images/Navigasyon.png" width="200" alt="Navigasyon Algoritma Şeması">
 </div>
