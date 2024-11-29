@@ -90,9 +90,15 @@ Bu proje, **TEKNOFEST Sanayide Dijital Teknolojiler Yarışması** için gelişt
 
 ## Ek Görseller
 
-README dosyasında şu görsellerin bulunmasını öneriyorum:
 - **ROS2 Düğüm Yapısı ve Bağlantı Şeması**
+- <div style="display: flex; justify-content: space-around;">
+    <img src="./images/Engelden_Kacma.png" width="200" alt="Engelden Kaçış Algoritma Şeması">
+</div>
 - **Engelden Kaçınma Algoritması Akış Şeması**
+<div style="display: flex; justify-content: space-around;">
+    <img src="./images/Hareketlilik.png" width="200" alt="Hareketlilik Algoritma Şeması">
+</div>
 - **Hareketlilik ve Navigasyon Algoritması Şeması**
-
-Lütfen bu görselleri sağlarsanız, README’ye uygun şekilde ekleyebilirim.
+<div style="display: flex; justify-content: space-around;">
+    <img src="./images/Navigasyon.png" width="200" alt="Navigasyon Algoritma Şeması">
+</div>
