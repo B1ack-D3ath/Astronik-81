@@ -92,13 +92,13 @@ Bu proje, **TEKNOFEST Sanayide Dijital Teknolojiler Yarışması** için gelişt
 
 - **Engelden Kaçınma Algoritması Akış Şeması**
   <div style="display: flex; justify-content: space-around;">
-    <img src="./images/Engelden_Kacma.png" width="400" alt="Engelden Kaçış Algoritma Şeması">
+    <img src="./images/Engelden_Kacma.png" width="800" alt="Engelden Kaçış Algoritma Şeması">
   </div>
 - **Hareketlilik Algoritması Şeması**
   <div style="display: flex; justify-content: space-around;">
-    <img src="./images/Hareketlilik.png" width="400" alt="Hareketlilik Algoritma Şeması">
+    <img src="./images/Hareketlilik.png" width="800" alt="Hareketlilik Algoritma Şeması">
   </div>
 - **Navigasyon Algoritması Şeması**
   <div style="display: flex; justify-content: space-around;">
-    <img src="./images/Navigasyon.png" width="400" alt="Navigasyon Algoritma Şeması">
+    <img src="./images/Navigasyon.png" width="800" alt="Navigasyon Algoritma Şeması">
   </div>
